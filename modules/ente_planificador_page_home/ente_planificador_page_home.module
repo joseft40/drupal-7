@@ -1,0 +1,204 @@
+<?php
+/**
+  * Modulo para la gestión de los iconos que conforman la pagina principal de los entes planificadores.
+  * Sistema Automatizado para la Planificación Estratégico-Situacional en la Administración Pública Venezolana
+  * @file ente_planificador_page_home.module
+  * Drupal part Module to code ente planificador module
+  * Copyright 2011 Sistema Automatizado para la Planificación Estratégico-Situacional en la Administración Pública Venezolana (CENDITEL)
+  *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation; either version 2 of the License, or
+  * (at your option) any later version.
+  * 
+  * This program is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  * GNU General Public License for more details.
+  * 
+  * You should have received a copy of the GNU General Public License
+  * along with this program; if not, write to the Free Software
+  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+  *
+  * @author Cenditel Merida - Ing. Jose Puentes
+  * @date 2015-10-29 // (a&#241;o-mes-dia)
+  * @version 0.1 // (0.1)
+  *
+  */
+
+/**
+ * Implementation of hook_menu
+ */
+function ente_planificador_page_home_menu() {
+  $items['admin/settings/ente_planificador/iconos'] = array(
+    'title' => t('Configuración de la pagina principal'),
+    'description' => t('Configuración de los iconos de la pagina principal.'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ente_planificador_page_home_icons_form'),
+    'access arguments' => array('admin planificador'),
+    'file' => 'ente_planificador_page_home.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+  );
+  $items[variable_get('ente_planificador_path_page_home')] = array(
+    'title' => t(variable_get('ente_planificador_title_page_home', NULL)),
+    'description' => t(variable_get('ente_planificador_title_page_home', NULL)),
+    'page callback' => 'ente_planificador_page_home_callback',
+    'access arguments' => array('ver planificador'),
+  );
+  return $items;
+}
+
+/**
+ * implementation of hook_theme
+ */
+function ente_planificador_page_home_theme() {
+  return array(
+    'ente_planificador_page_home_thumbnail_upload' => array(
+      'render element' => 'element',
+    ),
+    'ente_planificador_page_home_table_form' => array(
+      'render element' => 'form',
+    ),
+  );
+}
+
+/**
+ * Returns HTML to home.
+ */
+function ente_planificador_page_home_callback() {
+  $output = '';
+  $rows = array();
+  $root_elements = db_query('SELECT id, fid_image, name, path, description, weight, parent, depth FROM {ente_planificador_page_home} WHERE (parent = :parent) ORDER BY CAST(weight AS INT) ASC', array('parent' => 0));
+  foreach($root_elements as $elements) {
+    $element['#childrens'] = ente_planificador_page_home_items_hierarchical_get_tree($elements->id);
+    if (count($element['#childrens']) || is_numeric($elements->fid_image)) {  //exclude groups nulls
+      $rows[] = $element;
+      $output .= "<fieldset>";
+      if (is_numeric($elements->fid_image)) {
+        $file = file_load($elements->fid_image);
+        $output .= "<span style='padding: 10px;'>";
+        $output .= '<a href="' . $elements->path . '" title="' . $elements->name . '"><img src="' . file_create_url($file->uri) . '" /></a>';
+        $output .= "</span>";
+      }
+      for ($i=0; $i<count($element['#childrens']); $i++) {
+        $file = file_load($element['#childrens'][$i]['fid_image']);
+        $output .= "<span style='padding: 10px;'>";
+        $output .= '<a href="' . $element['#childrens'][$i]['path'] . '" title="' . $element['#childrens'][$i]['name'] . '"><img src="' . file_create_url($file->uri) . '" /></a>';
+        $output .= "</span>";
+      }
+      $output .= "</fieldset>";
+    }
+  }
+  return $output;
+}
+
+/**
+ * Style for image thumbnail
+ * Returns HTML for a image.
+ */
+function theme_ente_planificador_page_home_thumbnail_upload($variables) {
+  $element = $variables['element'];
+  if (isset($element['#file']->uri)) {
+    $output = '<img src="' . file_create_url($element['#file']->uri) . '" /><br>';
+    $output .= drupal_render_children($element);
+    return $output;
+  }
+}
+
+/**
+ * Theme callback for the ente_planificador_page_home_table_form form.
+ */
+function theme_ente_planificador_page_home_table_form(&$variables) {
+  // Get the useful values.
+  $form = $variables['form'];
+  $rows = $form['rows'];
+  $header = $form['#header'];
+  $table_id = 'page-home-items-table';
+
+  // Setup the structure to be rendered and returned.
+  $content = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => array(),
+    '#attributes' => array('id' => $table_id),
+  );
+  foreach (element_children($rows) as $row_index) {
+    $row = array();
+    $indent = '';
+    if ($row_index != 'new_field' && $row_index != 'group_new') {
+      $rows[$row_index]['id']['#attributes']['class'] = array('page-home-item-id');
+      $rows[$row_index]['weight']['#attributes']['class'] = array('page-home-item-weight');
+      $rows[$row_index]['parent']['#attributes']['class'] = array('page-home-item-parent');
+      if ($row_index != 'new_field') {
+        $indent .= theme('indentation', array('size' => $rows[$row_index]['depth']['#value']));
+      }
+      unset($form['rows'][$row_index]['depth']);
+    }
+    foreach (element_children($rows[$row_index]) as $col_index) {
+      $class = 'tabledrag-leaf';
+      if (isset($rows[$row_index]['type']['#value']) && $rows[$row_index]['type']['#value'] == 'group') { 
+        $class = 'tabledrag-root';
+      }
+      if ($col_index == 'upload') {
+         $row['data'][] = $indent. drupal_render($rows[$row_index][$col_index]);
+      }
+      else {
+        $row['data'][] = drupal_render($rows[$row_index][$col_index]);
+      }
+    }
+    if ($row_index != 'new_field' && $row_index != 'group_new') {
+      $class .= ' draggable';
+    }
+    $row['class'][] = $class;
+    $content['#rows'][] = $row;
+  }
+
+  $output = drupal_render($content);
+  drupal_add_tabledrag($table_id, 'match', 'parent', 'page-home-item-parent', 'page-home-item-parent', 'page-home-item-id', FALSE);
+  drupal_add_tabledrag($table_id, 'order', 'sibling', 'page-home-item-weight');
+
+  return $output;
+}
+
+/**
+ * Retrives the hierarchical tree structure from database
+ */
+function ente_planificador_page_home_items_hierarchical_get_tree($id) {
+  $childrens = array();
+  $children = db_query('SELECT id, fid_image, path, name, description FROM {ente_planificador_page_home} WHERE (parent = :parent)', array(':parent' => $id));
+  foreach ($children as $child) {
+    $childrens[] = array('id' => $child->id, 'fid_image' => $child->fid_image, 'path' => $child->path, 'name' => $child->name, 'description' => $child->description);
+  }
+  return $childrens;
+}
+
+/**
+ * Retrives the tree structure from database, and sorts by parent/child/weight.
+ */
+function ente_planificador_page_home_items_parent_get_data() {
+  $root_elements = db_query('SELECT id, fid_image, name, path, description, weight, parent FROM {ente_planificador_page_home} WHERE (parent = :parent) ORDER BY CAST(weight AS INT) ASC', array('parent' => 0));
+  $itemtree = array();
+  $depth = -1;
+  foreach ($root_elements as $parent) {
+    ente_planificador_page_home_items_get_tree($parent, $itemtree, $depth);
+  }
+  return $itemtree;
+}
+
+/**
+ * Recursively adds to the $itemtree array, ordered by parent/child/weight.
+ */
+function ente_planificador_page_home_items_get_tree($parentitem, &$itemtree = array(), &$depth = 0) {
+  $depth++;
+  $parentitem->depth = $depth;
+  $itemtree[$parentitem->id] = $parentitem;
+  $children = db_query('SELECT id, fid_image, name, path, description, weight, parent FROM {ente_planificador_page_home} WHERE (parent = :parent) ORDER BY CAST(weight AS INT) ASC', array(':parent' => $parentitem->id));
+
+  foreach ($children as $child) {
+    if (!in_array($child->id, array_keys($itemtree))) {
+      ente_planificador_page_home_items_get_tree($child, $itemtree, $depth);
+    }
+  }
+  $depth--;
+}
+

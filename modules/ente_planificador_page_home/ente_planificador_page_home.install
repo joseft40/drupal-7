@@ -1,0 +1,94 @@
+<?php
+/**
+  * Modulo para la gestión de los voceros que conforman un entes planificador.
+  * Sistema Automatizado para la Planificación Estratégico-Situacional en la Administración Pública Venezolana
+  * @file ente_planificador_page_home.install
+  * Drupal part Module to code ente planificador module
+  * Copyright 2011 Sistema Automatizado para la Planificación Estratégico-Situacional en la Administración Pública Venezolana (CENDITEL)
+  *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+  * the Free Software Foundation; either version 2 of the License, or
+  * (at your option) any later version.
+  * 
+  * This program is distributed in the hope that it will be useful,
+  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  * GNU General Public License for more details.
+  * 
+  * You should have received a copy of the GNU General Public License
+  * along with this program; if not, write to the Free Software
+  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+  *
+  * @author Cenditel Merida - Ing. Jose Puentes
+  * @date 2015-10-29 // (a&#241;o-mes-dia)
+  * @version 0.1 // (0.1)
+  *
+  */
+
+/*
+ * Implementation of hook_schema
+ */
+function ente_planificador_page_home_schema() {
+  $schema['ente_planificador_page_home'] = array(
+    'description' => 'iconos de la pagina principal.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for a node.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'path' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'default' => '',
+        'description' => 'ruta del icono',
+      ),
+      'fid_image' => array(
+        'type' => 'varchar',
+        'length' => 80,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'fid to imagen',
+      ),
+      'name' => array(
+        'type' => 'varchar',
+        'length' => 80,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'nombre del icono',
+      ),
+      'description' => array(
+        'type' => 'varchar',
+        'length' => 80,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'descripción del icono',
+      ),
+      'weight' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Peso de los iconos',
+      ),
+      'parent' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'pid to parent',
+      ),
+      'depth' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'pid to depth',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}
