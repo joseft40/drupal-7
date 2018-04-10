@@ -1,0 +1,41 @@
+name = Bootstrap Sub-Theme (CDN)
+description = Uses the jsDelivr CDN for all CSS and JavaScript. No source files or compiling is necessary and is recommended for simple sites or beginners.
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[logo]     	= 'Logo'
+regions[phone]     	= 'Phone'
+regions[region_email]  	= 'Email'
+regions[networking]    	= 'Networking social'
+regions[idioma]     	= 'Idioma'
+regions[top_header]    	= 'Top Header'
+regions[navigation]     = 'Navigation'
+regions[logo_navigation]= 'Logo Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer_top]         = 'Footer Top'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+regions[social_bar]    	= 'Social bar'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/style.css
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Javascript
+;;;;;;;;;;;;;;;;;;;;;
+scripts[] = js/realtytheme.js
