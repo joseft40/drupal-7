@@ -7,7 +7,7 @@
         $('.main-container').css({'margin-top': '30px'});
 	$('.logo-navigation-home').css({'margin-top': '50px'});
       }
-
+/*
       $('.page-user-propertys #block-menu-menu-opciones-usuario li, .page-dashboard-anuncios #block-menu-menu-opciones-usuario li, .page-dashboard-contacts #block-menu-menu-opciones-usuario li').hover(function() {
         $(this).css({'background-color': '#3d3d3d'});
       });
@@ -35,9 +35,11 @@
       });
       var height = $(".list-propertys .view-lista-de-propiedades").height();
       $('.page-user-propertys .region-filter-search-property').css({'height': height + 'px'});
-  $('.field-vocabulary-multiple').each(function () {
-    $(this).parent().css({"width": "100%", "display": "inline-flex"});
-  });
+      $('.field-vocabulary-multiple').each(function () {
+        $(this).parent().css({"width": "100%", "display": "inline-flex"});
+      });
+*/
+
     }
   };
 }(jQuery));
@@ -81,6 +83,20 @@ jQuery(document).ready(function($) {
   $("#background-parallex").css({'background-image': 'url(' + path + ')'});
   $("#background-parallex").css({'background-repeat': 'repeat-y'});
   $("#background-parallex").css({'min-height': '376px'});
-  $("#background-parallex").css({'width': '100%'});
+  $("#background-parallex").css({'width': '102.5%'});
+
+  $('a.zoom').each(function () {
+    $(this).hover(function() {
+      var path = $(this).attr('href');
+      $(this).zoom({url: path});
+    });
+  });
+  $('.colorbox-zoom img').each(function () {
+    var path = $(this).attr('src');
+    $(this).parent().attr('href', path);
+    $(this).hover(function() {
+      $(this).parent().zoom({url: path});
+    });
+  });
 
 });
