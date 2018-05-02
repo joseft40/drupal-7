@@ -103,9 +103,14 @@ header#top-header ul.language-switcher-locale-url img.language-icon {display: in
 }
 .top-bar .col-sm-2 {padding-top: 5px;}
 .top-bar .social {
-  padding-left: 55px !important;
+  /*padding-left: 55px !important;*/
   padding-right: 0px !important;
 }
+/*
+.top-bar .social {
+  padding-left: 0px;
+}
+*/
 /*
 .top-bar ul.social {list-style: none; width: 266px; margin: 0 auto; padding: 0;}
 .top-bar ul.social li {display: inline-block; margin:0 5px;}
@@ -163,6 +168,14 @@ button,
 select {
   height: 35px !important;
 }
+.btn-info,
+.btn-default,
+.btn-primary {
+  background: #337ab7 !important;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: bold;
+}
 .btn-blue {
   background: #0070cd !important;
   color: #ffffff;
@@ -180,15 +193,6 @@ select {
 .btn-profile:hover {
   background-color: #e6e6e6 !important;
   border-color: #adadad !important;
-}
-.page-propiedad .breadcrumb > li + li::before {
-  content: none !important;
-}
-.page-propiedad .breadcrumb .separator-breadcrumb {
-  color: #999;
-}
-.breadcrumb > li {
-  font-size: 12px !important;
 }
 /*
  * Tabs
@@ -220,6 +224,56 @@ select {
   color: #337ab7 !important;
 }
 /* Navs */
+#block-menu-menu-opciones-de-busqueda-de-con .fa::before {
+  color: #ffffff !important;
+}
+#block-menu-menu-opciones-de-busqueda-de-con ul li {
+  border: 1px solid #9ea6aa;
+  border-radius: 10px;
+  background: #aeaeae;
+  margin-left: 5px;
+  color: #ffffff !important;
+  padding-bottom: 1px;
+}
+#block-menu-menu-opciones-de-busqueda-de-con ul li:focus,
+#block-menu-menu-opciones-de-busqueda-de-con ul li:hover {
+  border: 1px solid #337ab7 !important;
+  border-radius: 10px !important;
+}
+#block-menu-menu-opciones-de-busqueda-de-con ul li a {
+  margin-left: 30px;
+  color: #ffffff !important;
+}
+#block-menu-menu-opciones-de-busqueda-de-con ul li a:hover,
+#block-menu-menu-opciones-de-busqueda-de-con ul li a:focus {
+  border: 1px solid #337ab7;
+  border-radius: 10px;
+  color: #ffffff;
+  background: #337ab7;
+}
+#block-menu-menu-opciones-de-busqueda-de-con .nav > li:focus,
+#block-menu-menu-opciones-de-busqueda-de-con .nav > li:hover {
+  background: #337ab7;
+  cursor: pointer;
+}
+/*
+#block-menu-menu-opciones-de-busqueda-de-con .nav > li:hover:before,
+#block-menu-menu-opciones-de-busqueda-de-con .nav > li:focus:before,
+#block-menu-menu-opciones-de-busqueda-de-con .nav > li:focus,
+#block-menu-menu-opciones-de-busqueda-de-con .nav > li:hover,
+#block-menu-menu-opciones-de-busqueda-de-con .nav > li > a:hover,
+#block-menu-menu-opciones-de-busqueda-de-con .nav > li > a:focus {
+  color: red !important;
+  background: #337ab7 !important;
+}*/
+#block-menu-menu-opciones-de-busqueda-de-con .fa::before {
+  margin-right: 20px;
+  margin-left: 5px;
+  font-size: 20px;
+/*  padding: 7px;*/
+  padding-top: 7px;
+  position: absolute;
+}
 #block-system-main-menu {
   margin-right: -20px;
 }
@@ -232,14 +286,16 @@ select {
 .banner-user .social {
   padding-top: 15px !important;
   position: absolute;
-  right: -60px;
-  width: 220px;
+  right: -30px;
+  width: 160px;
 }
 #block-menu-menu-options-user-header .fa::before {
   margin-right: 15px;
+  margin-left: -20px;
   font-size: 20px;
   color: #ffffff !important;
-  letter-spacing: 1px;
+  padding: 7px;
+  position: absolute;
 }
 #block-menu-menu-options-user-header {
   float: right;
@@ -248,11 +304,16 @@ select {
 }
 /*.page-dashboard #block-menu-menu-options-user-header*/
 #block-menu-menu-options-user-header {
-  padding-top: 5px;
+  padding-top: 10px;
 }
 #block-menu-menu-options-user-header .caret {
   display: none;
 }
+#block-menu-menu-opciones-usuario a:hover,
+#block-menu-menu-opciones-usuario a:focus {
+  background: transparent !important;
+}
+#block-menu-menu-opciones-usuario a,
 #block-menu-menu-options-user-header a,
 #block-menu-menu-options-user-header a:hover,
 #block-menu-menu-options-user-header a:focus  {
@@ -270,11 +331,27 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
 }
 #block-menu-menu-options-user-header .dropdown-menu {
 /*  margin-left: -3px;*/
-  margin-left: 0px;
-  margin-top: -1px;
+  margin-left: -30px;
+  margin-top: 1px;
   padding: 0;
-  width: 100%
+  width: 100%;
+  background: #9ea6aa;
 }
+#block-menu-menu-options-user-header .dropdown-menu li {
+  width: 100%;
+}
+#block-menu-menu-options-user-header .dropdown-menu li a {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+#block-menu-menu-options-user-header .dropdown-menu li > a:hover,
+#block-menu-menu-options-user-header .dropdown-menu li > a:focus {
+  background: #ffb718;
+}
+/*
+#block-menu-menu-options-user-header .dropdown-menu li {
+
+}*/
 #block-menu-menu-options-user-header .dropdown-menu li .fa:before {
   color: #3d3d3d;
 }
@@ -289,13 +366,13 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   background: #9ea6aa;
 }
 
-#block-menu-menu-options-user-header .dropdown-menu > li a:hover,
-#block-menu-menu-options-user-header .dropdown-menu > li a:focus {
+#block-menu-menu-options-user-header .dropdown-menu > li:hover,
+#block-menu-menu-options-user-header .dropdown-menu > li:focus {
   background: #ffb718 !important;
 }
 .pane-menu-menu-opciones-administrar-conten .menu {
-  margin-left: 15%;
-  width: 80%;
+  margin: auto;
+  width: 85%;
 }
 /*#block-menu-menu-options-user-header li ul.dropdown-menu {
   margin-top: 40px;
@@ -304,10 +381,12 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   background: #9ea6aa;
   margin-left: 15px;
   margin-top: -1px;
+  padding-left: 25px;
 }
-.block-compare-similars {
-
+#block-menu-menu-options-user-header li a {
+  margin-left: 6px;
 }
+#block-menu-menu-options-user-header li:hover,#block-menu-menu-options-user-header > li:focus,
 .nav > li > a:hover, .nav > li > a:focus {
   background-color: #337ab7 !important;
 }
@@ -330,6 +409,48 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   font-weight: bold;
 }
 /* Bloques */
+.logged-in.page-busqueda-mapa .col-sm-3.col-sidebar-firts,
+.logged-in.page-busqueda .col-sm-3.col-sidebar-firts {
+  margin-top: -40px;
+}
+.not-logged-in.page-busqueda-mapa #content-section-container,
+.not-logged-in.page-busqueda #content-section-container {
+  margin-top: 50px;
+} 
+.page-busqueda-mapa .main-container {
+  max-width: 90% !important;
+  margin: auto;
+}
+.page-busqueda-mapa .nav-tabs,
+.page-busqueda .nav-tabs {
+  border-radius: 10px 10px 0 0;
+  width: 76%;
+}
+.page-busqueda .nav-tabs {
+  margin-left: -15px;
+}
+.page-busqueda-mapa #content-section-container {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+.page-busqueda-mapa .col-sidebar-firts {
+  max-width: 300px;
+/*  max-width: 220px;*/
+}
+
+.page-busqueda-mapa .nav-tabs li a,
+.page-busqueda .nav-tabs li a{
+  margin-left: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+#block-menu-menu-opciones-de-busqueda-de-con {
+  margin-top: -50px;
+  max-width: 210px;
+  position: absolute;
+  right: 0;
+  width: 25%;
+}
 .region-filter {
   margin-top: -55px !important;
 }
@@ -342,6 +463,10 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
     -ms-box-shadow: 1px 1px 8px #ccc;
     -webkit-box-shadow: 1px 1px 8px #ccc;
 }
+#block-menu-menu-opciones-usuario li {
+  padding-top: 30px;
+  cursor: pointer;
+}
 #block-menu-menu-opciones-usuario li:first-of-type {
   margin-top: -71px;
 }
@@ -349,21 +474,22 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   padding-bottom: 40px;
 }
 .page-dashboard #block-menu-menu-opciones-usuario li {
-  height: 200px;
+  /*height: 200px;*/
   width: 100%;
 }
+.page-dashboard #block-menu-menu-opciones-usuario li a.fa-file-text::before,
 .page-dashboard #block-menu-menu-opciones-usuario li a.fa-heart::before,
 .page-dashboard #block-menu-menu-opciones-usuario li a.fa-home::before,
 .page-dashboard #block-menu-menu-opciones-usuario li a.fa-cog::before,
 .page-dashboard #block-menu-menu-opciones-usuario li a.fa-envelope::before {
   display: inline-block;
   font-size: 3em;
-  padding-bottom: 30px;
-  padding-top: 50px;
+  padding-bottom: 15px;
+  padding-top: 20px;
   width: 100%;
 }
 #block-menu-menu-opciones-usuario li a.active {
-  background-color: #337AB7 !important;
+ /* background-color: #337AB7 !important;*/
 }
 .block-agent-info form .form-item .fa {
   margin-right: 20px;
@@ -404,9 +530,9 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   background-color: #f5f5f5;
 }
 .page-node-add-apartment th.field-label {
- height: 10px;
+/* height: 10px;
  padding-left: 10px;
- padding-top: 5px;
+ padding-top: 5px;*/
 }
 .page-node-add-proyectos .addressfield-container .form-type-select {
   margin-right: 14px !important;
@@ -429,8 +555,8 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
 .page-node-add-proyectos .form-item label:first-child,
 .page-node-add-apartment th.field-label,
 .page-node-add-apartment .form-item label:first-child {
-  background-color: #f5f5f5;
-  border-color: #ddd;
+/*  background-color: #f5f5f5;
+  border-color: #ddd;*/
   color: #333;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -516,21 +642,26 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   width: 100%;
   padding: 0px !important;
 }
-.pane-node-field-beneficios .pane-content div:first-child {
-  display: block !important;
-  max-width: 640px;
+.field-vocabulary-multiple-container {
+  max-width: 85%;
   margin: auto;
+}
+.group-caracteristicas .form-wrapper.form-group {
+  margin: auto;
+  width: 92%;
 }
 .field-vocabulary-multiple {
   background: #ffffff none repeat scroll 0 0;
-  float: left;
+  /*float: left;*/
+  display: inline-block;
   font-size: 12px;
   margin-left: 0 !important;
   margin-right: 20px !important;
   margin-bottom: 20px;
-  min-height: 200px;
-  padding: 20px;
-  width: 300px;
+  padding-left: 15px;
+  padding-top: 20px;
+  min-height: 300px;
+  width: 280px;
 }
 .field-vocabulary-multiple ul {
   margin-left: -20px;
@@ -643,7 +774,6 @@ body {
 .main-container {
   max-width: 1170px;
 }
-.breadcrumb {background: #ececec;}
 .form-required {color: red;}
 .logo-realty-panama {
   height: 40px;
@@ -696,19 +826,6 @@ body {
   margin-bottom: -14px;
   padding: 15px;
 }
-.page-propiedad .pane-page-breadcrumb {
-  background: #e6e6e6 none repeat scroll 0 0;
-  border-radius: 5px;
-  margin-left: 21% !important;
-  width: 74%;
-}
-.page-propiedad .pane-page-breadcrumb .breadcrumb {
-  background: transparent none repeat scroll 0 0;
-  display: block !important;
-  height: 30px;
-  margin-top: -30px;
-  padding-top: 5px;
-}
 .page-propiedad .pane-menu-menu-menu-opciones-apartamento {
   background: #ffffff none repeat scroll 0 0;
   height: 85px;
@@ -743,28 +860,62 @@ body {
 }
 .page-propiedad .region-top-sglider {
   margin-top: -10px;
+/*  margin-bottom: -40px;*/
 }
 .separator-breadcrumb {
   color: #000000;
   margin-right: 10px;
   margin-left: 10px;
 }
+.breadcrumb > li + li::before {
+  content: none !important;
+}
+.breadcrumb .separator-breadcrumb {
+  color: #999;
+}
+.breadcrumb > li {
+  font-size: 12px !important;
+}
+.pane-page-breadcrumb .breadcrumb {
+  display: inline;
+}
+.breadcrumb {background: #ececec;}
+.breadcrumb,
+.pane-page-breadcrumb {
+  background: #e6e6e6 none repeat scroll 0 0;
+  border-radius: 5px;
+  margin-left: 21% !important;
+  width: 74%;
+}
+.page-propiedad .pane-page-breadcrumb .breadcrumb {
+  background: transparent none repeat scroll 0 0;
+  display: block !important;
+  height: 30px;
+  margin-top: -30px;
+  padding-top: 5px;
+}
+.breadcrumb {
+  background: transparent none repeat scroll 0 0;
+  height: 30px;
+  margin-top: 10px;
+  padding-top: 5px;
+}
 .breadcrumb {
   color: #337ab7;
 }
-.page-dashboard .breadcrumb,
-.page-propiedad .breadcrumb {
+.breadcrumb,
+.breadcrumb {
   display: none;
 }
-.page-propiedad .pane-page-breadcrumb {
+.pane-page-breadcrumb {
   margin-bottom: -10px;
   margin-top: 40px;
 }
-.page-propiedad .pane-page-breadcrumb .breadcrumb {
+.pane-page-breadcrumb .breadcrumb {
   display: block !important;
   background: transparent;
 }
-.page-dashboard .pane-title {
+.pane-title {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 5px;
 }
@@ -870,6 +1021,67 @@ body {
   padding-top: 80px;
   padding-left: -5px;
 }
+.page-dashboard .list-propertys:nth-child(1) {
+  padding-top: 0px;
+  margin-top: -60px;
+}
+/*.page-busqueda-mapa #content-section-container,*/
+.page-busqueda-mapa .row-container .row .location {
+  font-size: 14px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+.page-busqueda-mapa .page-header {
+  display: none;
+}
+.page-busqueda-mapa .row-container {
+  margin-right: -15px;
+}
+.page-busqueda-mapa .row-container .row .col-md-12.padding0 .col-md-3.padding0 {
+  width: 22% !important;
+}
+.page-busqueda-mapa .row-container .field-weight-bold {
+  font-size: 16px;
+  padding: 5px;
+}
+.page-busqueda-mapa .row-container .col-md-12.row .field-weight-bold {
+/*  margin-left: -13px;*/
+  font-size: 20px;
+}
+.page-busqueda-mapa .row-container .field-weight-bold + .col-md-12 { 
+/*  margin-left: -5px;*/
+}
+.padding0 {
+  padding: 0px;
+}
+.page-busqueda-mapa .row-container p {
+  font-size: 14px;
+}
+.page-busqueda-mapa .row-container .background-body {
+  padding-top: 14px;
+}
+.page-busqueda-mapa .row-container .row .location {
+  margin-bottom: -3px;
+  margin-left: -6px;
+  margin-top: 4px;
+}
+.page-busqueda-mapa .row-container .row .location + .row {
+  margin-top: -10px;
+}
+.page-busqueda-mapa .row-container .row {
+  margin-bottom: 5px;
+  margin-left: -5px;
+}
+.page-busqueda .region-sidebar-first,
+.page-busqueda-mapa .region-sidebar-first {
+  background: transparent;
+  border: 0px;
+  box-shadow: inherit;
+  padding: 5px;	
+}
+/*.page-busqueda-mapa .region-sidebar-first,
+.page-busqueda .region-sidebar-first,*/
 .page-dashboard .region-filter-search-property {
   background: #ffffff;
   padding: 10px;
@@ -890,9 +1102,10 @@ body {
   margin-top: -40px !important;
 }
 #caracteristicas-proyecto .view-page-propiedad .views-row {
-  margin-left: -30px;
+  margin-left: -45px;
   width: 105%;
-  box-shadow: 0 5px 0 #ccc !important;
+/*  box-shadow: 0 5px 0 #ccc !important;*/
+  background: #ffffff;
 }
 #caracteristicas-proyecto .view-page-propiedad .views-row .row {
   font-size: 16px;
@@ -929,6 +1142,30 @@ body {
 }
 .page-dashboard #navbar {
   box-shadow: initial !important; 
+}
+#edit-filtros-aplicados {
+  border-radius:0px 0px 15px 15px;
+}
+#edit-filtros-aplicados .panel-collapse a {
+  background: #337ab7 none repeat scroll 0 0;
+  border-radius: 10px;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  min-height: 20px;
+  padding: 8px 5px 8px 15px;
+  text-transform: uppercase;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#edit-filtros-aplicados {
+  box-shadow: 0 5px 5px #ccc;
+}
+#edit-filtros-aplicados .panel-collapse div:last-child {
+  margin-top: 20px;
+}
+#edit-filtros-aplicados .form-submit {
+  margin-top: 10px;
 }
 .view-lista-de-propiedades td {
   padding-right: 0px !important;
@@ -1048,20 +1285,77 @@ body.page-node-add-apartment {
   float: right;
   margin-right: 0 !important;
 }
+/*
 .page-node-add form .field-name-field-niveles-propiedades {
   position: absolute;
   width: 47.5% !important;
+}*/
+.page-node-add .field-name-field-agregar-unidad .field-multiple-drag,
+.page-node-add .field-name-field-agregar-unidad .field-label {
+  display: none;
 }
 .page-node-add form .group-datos-apartaments .form-group.form-item {
   width: 95%;
 }
+form .field-name-field-contract-type {
+/*  display: inline-block;
+  min-height: 50px;
+  padding-bottom: 7px;*/
+  float: left;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.group-caracteristicas .form-checkboxes,
+.group-caracteristicas-proyecto .form-checkboxes {
+  margin-left: 20px;
+}
+.field-name-field-destacado.form-wrapper.form-group {
+  width: 50%;
+}
+.field-name-field-contract-type .form-type-radio,
+#contacto-element-field .form-wrapper.form-group,
+#group-three-column2 .form-wrapper.form-group, 
+#group-three-column2 .form-item.form-group,
+#group-three-column .form-wrapper.form-group,
+#group-three-column .form-item.form-group {
+  width: 49%;
+  margin-right: 1%;
+  float: left;
+}
+#group-three-column .form-wrapper.form-group {
+  margin-bottom: -50px;
+}
+#group-twelve-group .form-item.form-group {
+  display: inline-block;
+  margin-top: 70px;
+  width: 100%;
+}
+#group-three-column2 .field-name-field-estado-actual-propiedad .form-item-field-estado-actual-propiedad-und,
+#group-three-column .field-name-field-estado-actual-propiedad .form-item-field-estado-actual-propiedad-und {
+  width: 100%;
+}
+#boostrap-panel-location,
+.form-item-field-agregar-unidad-und-0-field-contract-type-und .form-radios {
+  width: 100%;
+}
+.field-name-field-contract-type.form-wrapper.form-group .control-label {
+  width: 160px;
+}
+.field-name-field-contract-type.form-wrapper.form-group .control-label input {
+  float: left;
+  margin: -5px 0 0 70px;
+}
+.group-detalles-propiedades .field-name-field-espacios .form-item.form-group {
+  width: 99%;
+}
+/*
 .page-node-add form .group-datos-apartaments .form-group.form-wrapper {
   display: inline-block;
   margin-bottom: 10px;
   margin-top: 0;
   padding-right: 5px;
   width: 50%;
-}
+}*/
 .page-node-add form .group-datos-apartaments .form-item.form-group label {
   display: block;
 }
@@ -1117,6 +1411,7 @@ body.page-node-add-apartment {
 }
 .row-container-two .min-height-text .col-md-12 .col-md-3 {
   padding-right: 0px;
+  padding-left: 0px;
   width: 47px;
   margin: auto;
 }
@@ -1133,7 +1428,7 @@ body.page-node-add-apartment {
 }
 /** panels **/
 .panel-center {
- margin-left: 5%;
+ margin-left: 4%;
 }
 .region-top-sglider .sligder-principal .view-page-propiedad  {
   height: 300px;
@@ -1184,7 +1479,29 @@ body.page-node-add-apartment {
   margin-top: -30px;
   text-align: left;
 }
-.pane-page-propiedad .views-row,
+.view-block-redes-sociales {
+  padding-right: 0px;
+  margin-top: 10px;
+}
+.view-block-redes-sociales .views-field h3 {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left;
+}
+.view-block-redes-sociales .views-field {
+  display: inline-block;
+  font-size: 1.3em;
+  padding-right: 30px;
+  margin-top: -5px;
+}
+.view-block-redes-sociales .views-field a {
+  color: #000000;
+}
+.view-block-redes-sociales .views-field .fa {
+  color: #337ab7;
+  font-weight: bold;
+}
+/*.pane-page-propiedad .views-row,*/
 .pane-realty-webform {
   width: 85%;
   margin-left: 10%;
@@ -1215,6 +1532,7 @@ body.page-node-add-apartment {
   z-index: 99;
   color: #ffffff;
   font-size: 1.5em;
+  margin-top: 61px;
 }
 /*
 #page-propiedad .panels-flexible-region-first {
@@ -1302,6 +1620,8 @@ body.page-node-add-apartment {
 .views-exposed-form .views-exposed-widget {
   padding: 0px;
 }
+.views-exposed-widget .form-item-edit-field-banos-value-all,
+.views-exposed-widget .form-item-edit-type-all,
 .views-exposed-widget .form-item-edit-field-contacto-value-all,
 .views-exposed-widget .form-item-edit-field-estacionamiento-propiedad-value-all,
 .views-exposed-widget .form-item-edit-field-bathrooms-value-all,
@@ -1393,7 +1713,7 @@ body.page-node-add-apartment {
 /** Images **/
 .align-left-img {
   margin-top: -24px;
-  margin-bottom: -40px;
+  margin-bottom: -46px;
   margin-left: -15px;
 }
 .box-element-propertys h4 {
@@ -1408,6 +1728,9 @@ body.page-node-add-apartment {
 }
 .sms-count .col-sm-6 {
   color: #000000;
+}
+.flexslider {
+  margin: 0px 0px 10px;
 }
 /** module flex sglider **/
 .flexslider .flex-direction-nav a,
@@ -1552,7 +1875,7 @@ form#proyectos-node-form ul.horizontal-tabs-list li.selected a strong{color: #ff
 form#proyectos-node-form .field-name-field-localizacion-en-el-mapa {width: 100%;}
 
 /* form apartament */
-form#apartment-node-form .field-name-field-tipo-de-desarrollo, .field-name-field-etapa-de-desarrollo,
+/*form#apartment-node-form .field-name-field-tipo-de-desarrollo, .field-name-field-etapa-de-desarrollo,*/
 .field-name-field-total-de-unidades,
 .field-name-field-entrega {width: 24%; float: left;}
 form#apartment-node-form ul.horizontal-tabs-list li {background-image: url(img-custom/in.png), url(img-custom/normal.png); background-repeat: no-repeat; background-position: left, right; background-color:  #eee;  padding: 0 15px 5px 5px; font-size: 18px; border:0; padding-left: 26px;}
@@ -1595,13 +1918,22 @@ form#apartment-node-form .field-name-field-localizacion-en-el-mapa {width: 100%;
 .jGrowl {
   z-index: 999999999999 !important;
 }
+.jGrowl-notification {
+  text-align: center;
+  font-size: 1.3em;
+}
+#jGrowl {
+  float: left;
+  margin-top: 15%;
+}
 /**
  * Quick tabs
  */
 #quicktabs-busqueda_de_propiedades_o_proyec {
   margin-left: 2px;
 }
-.quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-type {
+.quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-type,
+.quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-field_tipo_de_desarrollo_tid {
   width: 25%;
   margin-top: 0px !important;
 }
@@ -1612,11 +1944,13 @@ form#apartment-node-form .field-name-field-localizacion-en-el-mapa {width: 100%;
 .quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-combine input {
   border-radius: 0px 5px 5px 0px;
 }
-.quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-type select {
+.quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-type select,
+.quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-field_tipo_de_desarrollo_tid select {
   border-radius: 5px 0px 0px 5px;
 }
 .quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-submit-button .form-item,
 .quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-type .form-item,
+.quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-field_tipo_de_desarrollo_tid .form-item select,
 .quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-combine .form-item,
 .quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-submit-button button,
 .quicktabs-wrapper .views-exposed-form .views-exposed-widget.views-widget-filter-type select,
@@ -1687,7 +2021,7 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
 #background-parallex {
   float: left;
   margin-left: -15px;
-  margin-right: -15px;
+  /*margin-right: -15px;*/
   margin-top: 30px;
 }
 .image-parallex-header {
@@ -1711,7 +2045,7 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
 }
 #porque-realty-panama {
   /*position: absolute;*/
-  width: 100%;
+  width: 102.5%;
   text-align: center;
   background: rgba(0,0,0,0.5);
   min-height: 376px;
@@ -1745,4 +2079,115 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
 #porque-realty-panama .pane-content {
   width: 70%;
   margin: auto;
+}
+.borde-top {
+  border-top: 1px solid rgba(93, 93, 93, 0.3);
+  padding-top: 5px;
+}
+/**
+ * Colorbox zoom
+ */
+.colorbox-zoom a,
+.zoom {
+  display:inline-block;
+  position: relative;
+}
+.colorbox-zoom img,
+.zoom img {
+  display: block;
+}
+.zoom img::selection,
+.colorbox-zoom img::selection, { background-color: transparent; }
+.type-propiedad {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 30px;
+  margin-top: 185px;
+  position: absolute;
+  z-index: 9;
+}
+.title-content {
+  font-weight: bold;
+  margin-left: 20px;
+}
+.field-location-proyectos-label {
+  margin-left: 3px !important;
+}
+.field-location-label {
+  margin-left: 5px;
+}
+.font-size14 {
+  font-size: 14px;
+}
+.padding-right0 {
+  padding-right: 0px;
+}
+.margin-top4 {
+  margin-top: 3px;
+}
+#-wrapper {
+  display: none;
+}
+.fa-borderbott {
+  width: 10%;
+  border-bottom: 1px solid #000000;
+}
+/** Placeholder **/
+.form-item.form-item-field-area-del-terreno-m-value-max,
+.form-item.form-item-field-precio-de-venta-value-max {
+  margin-bottom: 25px;
+}
+.form-item.form-item-field-area-del-terreno-m-value-max label,
+.form-item.form-item-field-precio-de-venta-value-max label {
+  display: none;
+}
+.more-location {
+  width: 100%;
+  display: inline-block;
+}
+.paddingl12 {
+  padding-left: 12px !important;
+}
+.marginl15 {
+  margin-left: 15%;
+}
+.marginl10m {
+  margin-left: -30px;
+}
+.marginl10 {
+  margin-left: 10px;
+}
+.marginr10 {
+  margin-right: 10px;
+}
+.margint5 {
+  margin-top: 5px;
+}
+.margint10 {
+  margin-top: 10px;
+}
+.margint15 {
+  margin-top: 15px;
+}
+.marginb10 {
+  margin-bottom: 10px;
+}
+.margint20 {
+  margin-top: 20px;
+}
+.margint10m {
+  margin-top: -30px;
+}
+/**
+ * Fieldset
+ */
+.page-busqueda-mapa .views-exposed-form .views-exposed-widget fieldset.collapsible {
+  border: 0px;
+  margin-bottom: 10px;
+  box-shadow: initial;
+}
+.page-busqueda-mapa .views-exposed-form .views-exposed-widget .collapsible .panel-heading {
+  padding: 7px 15px;
+
 }
