@@ -100,6 +100,7 @@ header#top-header ul.language-switcher-locale-url img.language-icon {display: in
   height: 40px;
  /* padding-top: 5px;
   padding-bottom: 9px;*/
+  margin-left: -40px;
 }
 .top-bar .col-sm-2 {padding-top: 5px;}
 .top-bar .social {
@@ -300,14 +301,17 @@ select {
 #block-menu-menu-options-user-header {
   float: right;
  /* margin-top: -40px;*/
-  margin-right: -25px;
+/*  margin-right: -25px;*/
+  margin-right: -45px;
+  width: 100%;
 }
 /*.page-dashboard #block-menu-menu-options-user-header*/
 #block-menu-menu-options-user-header {
   padding-top: 10px;
 }
 #block-menu-menu-options-user-header .caret {
-  display: none;
+  float: right;
+  margin-top: 10px;
 }
 #block-menu-menu-opciones-usuario a:hover,
 #block-menu-menu-opciones-usuario a:focus {
@@ -329,16 +333,23 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   margin-left: 5px;
   margin-top: 5px;
 }
+#block-menu-menu-options-user-header .menu {
+  width: 70%;
+  float: right; 
+}
 #block-menu-menu-options-user-header .dropdown-menu {
 /*  margin-left: -3px;*/
   margin-left: -30px;
   margin-top: 1px;
   padding: 0;
   width: 100%;
+<<<<<<< HEAD
   background: #9ea6aa;
 }
 #block-menu-menu-options-user-header .dropdown-menu li {
   width: 100%;
+=======
+>>>>>>> 7120eb4c93f7e1b2538698a7cc9a42a3818dbac7
 }
 #block-menu-menu-options-user-header .dropdown-menu li a {
   padding-top: 5px;
@@ -381,7 +392,12 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   background: #9ea6aa;
   margin-left: 15px;
   margin-top: -1px;
+<<<<<<< HEAD
   padding-left: 25px;
+=======
+  width:265px;
+  display: inline-block;
+>>>>>>> 7120eb4c93f7e1b2538698a7cc9a42a3818dbac7
 }
 #block-menu-menu-options-user-header li a {
   margin-left: 6px;
@@ -2105,7 +2121,10 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
   margin-left: 30px;
   margin-top: 185px;
   position: absolute;
+<<<<<<< HEAD
   z-index: 9;
+=======
+>>>>>>> 7120eb4c93f7e1b2538698a7cc9a42a3818dbac7
 }
 .title-content {
   font-weight: bold;
@@ -2126,6 +2145,7 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
 .margin-top4 {
   margin-top: 3px;
 }
+<<<<<<< HEAD
 #-wrapper {
   display: none;
 }
@@ -2191,3 +2211,5 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
   padding: 7px 15px;
 
 }
+=======
+>>>>>>> 7120eb4c93f7e1b2538698a7cc9a42a3818dbac7

@@ -73,7 +73,7 @@
  * @ingroup templates
  */
 ?>
-
+<?php  drupal_add_js('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js', array('weight' => -1, 'type' => 'external')); ?>
 <?php if (!empty($page['logo']) || !empty($page['phone']) || !empty($page['region_email']) || !empty($page['networking']) || !empty($page['idioma']) || !empty($page['top_header'])): ?>
 <header id="top-header">
   <div class="top-bar">
