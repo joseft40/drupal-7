@@ -8,6 +8,13 @@
 	$('.logo-navigation-home').css({'margin-top': '50px'});
       }
 
+/*
+      Drupal.ajax['some_element'].options.beforeSubmit = function (form_values, element, options) {
+        console.log('values');        
+console.log(Drupal.ajax);
+      }*/
+
+/*
       $('.page-user-propertys #block-menu-menu-opciones-usuario li, .page-dashboard-anuncios #block-menu-menu-opciones-usuario li, .page-dashboard-contacts #block-menu-menu-opciones-usuario li').hover(function() {
         $(this).css({'background-color': '#3d3d3d'});
       });
@@ -35,9 +42,11 @@
       });
       var height = $(".list-propertys .view-lista-de-propiedades").height();
       $('.page-user-propertys .region-filter-search-property').css({'height': height + 'px'});
-  $('.field-vocabulary-multiple').each(function () {
-    $(this).parent().css({"width": "100%", "display": "inline-flex"});
-  });
+      $('.field-vocabulary-multiple').each(function () {
+        $(this).parent().css({"width": "100%", "display": "inline-flex"});
+      });
+*/
+
     }
   };
 }(jQuery));
@@ -81,6 +90,138 @@ jQuery(document).ready(function($) {
   $("#background-parallex").css({'background-image': 'url(' + path + ')'});
   $("#background-parallex").css({'background-repeat': 'repeat-y'});
   $("#background-parallex").css({'min-height': '376px'});
-  $("#background-parallex").css({'width': '100%'});
+  $("#background-parallex").css({'width': '102.5%'});
+
+  $('a.zoom').each(function () {
+    $(this).hover(function() {
+      //var path = $(this).attr('href');
+      $(this).zoom({url: path});
+    });
+  });
+  $('.colorbox-zoom img').each(function () {
+    var path = $(this).attr('src');
+    //$(this).parent().attr('href', path);
+    $(this).hover(function() {
+      $(this).parent().zoom({url: path});
+    });
+  });
+  //field location in views mapa
+  $('.form-item-field-location-administrative-area .form-item.form-group').each(function(index) {
+    if (index == 5) {
+      $(this).after("<a id='more-location-map'><i class='fa fa-plus-square' aria-hidden='true'></i><span class='marginl15'>Ver más</span></a>");
+    }
+    if (index > 5) {
+      $(this).hide();
+     }
+  });
+  $('.form-item-field-location-administrative-area .form-item.form-group').last().after("<a id='minus-location-map'><i class='fa fa-minus-square' aria-hidden='true'></i><span class='marginl15'>Ver menos</span></a>");
+  $('#minus-location-map').hide();
+  $('#more-location-map').click(function () {
+    $('.form-item-field-location-administrative-area .form-item.form-group').each(function(index) {
+      if (index > 5) {
+        $(this).show();
+      }
+    });
+    $('#more-location-map').hide();
+    $('#minus-location-map').show();
+    $('#minus-location-map').css({'display': 'block'});
+  });
+
+  $('#minus-location-map').click(function () {
+    $('#minus-location-map').hide();
+    $('#more-location-map').show();
+    $('#more-location-map').css({'display': 'block'});
+    $('.form-item-field-location-administrative-area .form-item.form-group').each(function(index) {
+      if (index > 5) {
+        $(this).hide();
+      }
+    });
+  });
+  $('#minus-location-map, #more-location-map').css({'cursor':'pointer', 'padding-top': '5px'});
+  //field tipo de desarrollo
+  $(".form-item-field-tipo-de-desarrollo-tid .form-item.form-group").each(function(index) {
+    if (index == 5) {
+      $(this).after("<a id='more-desarrollo-map'><i class='fa fa-plus-square' aria-hidden='true'></i><span class='marginl15'>Ver más</span></a>");
+    }
+    if (index > 5) {
+      $(this).hide();
+     }
+  });
+  $('.form-item-field-tipo-de-desarrollo-tid .form-item.form-group').last().after("<a id='minus-desarrollo-map'><i class='fa fa-minus-square' aria-hidden='true'></i><span class='marginl15'>Ver menos</span></a>");
+  $('#minus-desarrollo-map').hide();
+  $('#more-desarrollo-map').click(function () {
+    $('.form-item-field-tipo-de-desarrollo-tid .form-item.form-group').each(function(index) {
+      if (index > 5) {
+        $(this).show();
+      }
+    });
+    $('#more-desarrollo-map').hide();
+    $('#minus-desarrollo-map').show();
+    $('#minus-desarrollo-map').css({'display': 'block'});
+  });
+
+  $('#minus-desarrollo-map').click(function () {
+    $('#minus-desarrollo-map').hide();
+    $('#more-desarrollo-map').show();
+    $('#more-desarrollo-map').css({'display': 'block'});
+    $('.form-item-field-tipo-de-desarrollo-tid .form-item.form-group').each(function(index) {
+      if (index > 5) {
+        $(this).hide();
+      }
+    });
+  });
+  $('#minus-desarrollo-map, #more-desarrollo-map').css({'cursor':'pointer', 'padding-top': '5px'});
+  //field Beneficios
+  $(".form-item-field-beneficios-tid .form-item.form-group").each(function(index) {
+    if (index == 5) {
+      $(this).after("<a id='more-beneficios-map'><i class='fa fa-plus-square' aria-hidden='true'></i><span class='marginl15'>Ver más</span></a>");
+    }
+    if (index > 5) {
+      $(this).hide();
+     }
+  });
+  $('.form-item-field-beneficios-tid .form-item.form-group').last().after("<a id='minus-beneficios-map'><i class='fa fa-minus-square' aria-hidden='true'></i><span class='marginl15'>Ver menos</span></a>");
+  $('#minus-beneficios-map').hide();
+  $('#more-beneficios-map').click(function () {
+    $('.form-item-field-beneficios-tid .form-item.form-group').each(function(index) {
+      if (index > 5) {
+        $(this).show();
+      }
+    });
+    $('#more-beneficios-map').hide();
+    $('#minus-beneficios-map').show();
+    $('#minus-beneficios-map').css({'display': 'block'});
+  });
+
+  $('#minus-beneficios-map').click(function () {
+    $('#minus-beneficios-map').hide();
+    $('#more-beneficios-map').show();
+    $('#more-beneficios-map').css({'display': 'block'});
+    $('.form-item-field-beneficios-tid .form-item.form-group').each(function(index) {
+      if (index > 5) {
+        $(this).hide();
+      }
+    });
+  });
+  $('#minus-beneficios-map, #more-beneficios-map').css({'cursor':'pointer', 'padding-top': '5px'});
+
+  $(".page-busqueda .views-exposed-form .views-exposed-widget .form-submit span").removeClass("glyphicon-filter");
+  $(".page-busqueda-mapa .views-exposed-form .views-exposed-widget .form-submit span").removeClass("glyphicon-filter");
+  var height = 0;
+  $(".field-vocabulary-multiple").each(function (index) {
+    if ($(this).height() > height) {
+      height = $(this).height();
+    }
+  });
+  $(".field-vocabulary-multiple-container td").css({'height': height});
+  $('#block-menu-menu-opciones-usuario li').hover(function() {
+     $(this).css({'background-color': '#337AB7'});
+  });
+	$('#block-menu-menu-opciones-usuario li').mouseout(function () {
+    $(this).css({'background-color': '#3d3d3d'});
+	});
+	$('#block-menu-menu-opciones-usuario li a.active').each(function () {
+     $(this).parent().css({'background-color': '#337AB7'});
+	});
 
 });
