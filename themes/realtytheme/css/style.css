@@ -4,7 +4,8 @@
 /* Fonts */
 .icon-1-7 { font-size: 1.7em; }
 .icon-5 { font-size: 4em; }
-.text-18 { font-size: 18px !important; }
+/*.text-18 { font-size: 18px !important; }*/
+.text-18 { font-size: 14px !important; }
 /* html */
 p {font-size: 16px; text-align: justify;}
 li {font-size: 16px; text-align: justify;}
@@ -100,7 +101,6 @@ header#top-header ul.language-switcher-locale-url img.language-icon {display: in
   height: 40px;
  /* padding-top: 5px;
   padding-bottom: 9px;*/
-  margin-left: -40px;
 }
 .top-bar .col-sm-2 {padding-top: 5px;}
 .top-bar .social {
@@ -155,6 +155,9 @@ ul.menu.navbar-nav {
   text-transform: uppercase;
   width: 48.5%;
 }
+.page-header {
+  color: #337ab7;
+}
 /**
  * Fields
  */
@@ -169,6 +172,11 @@ button,
 select {
   height: 35px !important;
 }
+/*
+input,
+select {
+  background: rgba(255, 165, 0, 0.5);
+}*/
 .btn-info,
 .btn-default,
 .btn-primary {
@@ -236,6 +244,14 @@ select {
   color: #ffffff !important;
   padding-bottom: 1px;
 }
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  background: transparent !important;
+}
 #block-menu-menu-opciones-de-busqueda-de-con ul li:focus,
 #block-menu-menu-opciones-de-busqueda-de-con ul li:hover {
   border: 1px solid #337ab7 !important;
@@ -254,7 +270,7 @@ select {
 }
 #block-menu-menu-opciones-de-busqueda-de-con .nav > li:focus,
 #block-menu-menu-opciones-de-busqueda-de-con .nav > li:hover {
-  background: #337ab7;
+  background-color: #337ab7 !important;
   cursor: pointer;
 }
 /*
@@ -301,21 +317,27 @@ select {
 #block-menu-menu-options-user-header {
   float: right;
  /* margin-top: -40px;*/
-/*  margin-right: -25px;*/
-  margin-right: -45px;
-  width: 100%;
+  margin-right: -25px;
 }
 /*.page-dashboard #block-menu-menu-options-user-header*/
 #block-menu-menu-options-user-header {
   padding-top: 10px;
 }
 #block-menu-menu-options-user-header .caret {
-  float: right;
-  margin-top: 10px;
+  display: none;
 }
+#block-menu-menu-opciones-usuario >li > a:focus,
+#block-menu-menu-opciones-usuario >li > a:hover,
 #block-menu-menu-opciones-usuario a:hover,
 #block-menu-menu-opciones-usuario a:focus {
-  background: transparent !important;
+  background: transparent;
+}
+#block-menu-menu-options-user-header .nav > li > a:hover,
+#block-menu-menu-options-user-header .nav > li > a:focus,
+#block-menu-menu-options-user-header .dropdown-menu > li > a:hover,
+#block-menu-menu-options-user-header .dropdown-menu > li > a:focus {
+/*  background: transparent !important;*/
+  background: #337AB7;
 }
 #block-menu-menu-opciones-usuario a,
 #block-menu-menu-options-user-header a,
@@ -324,7 +346,11 @@ select {
   color: #ffffff !important;
   font-weight: bold;
 }
-
+/*
+.menu-default-user-header:hover,
+.menu-default-user-header:focus  {
+  background-color: #337ab7 !important;
+}*/
 header#top-header ul.language-switcher-locale-url a {
   float: left;
 }
@@ -333,32 +359,27 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   margin-left: 5px;
   margin-top: 5px;
 }
-#block-menu-menu-options-user-header .menu {
-  width: 70%;
-  float: right; 
-}
 #block-menu-menu-options-user-header .dropdown-menu {
 /*  margin-left: -3px;*/
   margin-left: -30px;
   margin-top: 1px;
   padding: 0;
   width: 100%;
-<<<<<<< HEAD
-  background: #9ea6aa;
+/*  background: #9ea6aa;*/
 }
 #block-menu-menu-options-user-header .dropdown-menu li {
   width: 100%;
-=======
->>>>>>> 7120eb4c93f7e1b2538698a7cc9a42a3818dbac7
 }
 #block-menu-menu-options-user-header .dropdown-menu li a {
   padding-top: 5px;
   padding-bottom: 10px;
 }
+/*
 #block-menu-menu-options-user-header .dropdown-menu li > a:hover,
 #block-menu-menu-options-user-header .dropdown-menu li > a:focus {
   background: #ffb718;
-}
+}*/
+
 /*
 #block-menu-menu-options-user-header .dropdown-menu li {
 
@@ -370,17 +391,17 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   margin-left: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-}
+}/*
 #block-menu-menu-options-user-header .nav .open > a,
 #block-menu-menu-options-user-header .nav .open > a:hover,
 #block-menu-menu-options-user-header .nav .open > a:focus  {
   background: #9ea6aa;
-}
-
+}*/
+/*
 #block-menu-menu-options-user-header .dropdown-menu > li:hover,
 #block-menu-menu-options-user-header .dropdown-menu > li:focus {
   background: #ffb718 !important;
-}
+}*/
 .pane-menu-menu-opciones-administrar-conten .menu {
   margin: auto;
   width: 85%;
@@ -392,20 +413,25 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   background: #9ea6aa;
   margin-left: 15px;
   margin-top: -1px;
-<<<<<<< HEAD
   padding-left: 25px;
-=======
-  width:265px;
-  display: inline-block;
->>>>>>> 7120eb4c93f7e1b2538698a7cc9a42a3818dbac7
 }
 #block-menu-menu-options-user-header li a {
   margin-left: 6px;
 }
-#block-menu-menu-options-user-header li:hover,#block-menu-menu-options-user-header > li:focus,
-.nav > li > a:hover, .nav > li > a:focus {
+/*#block-menu-menu-options-user-header > li > a:hover,
+#block-menu-menu-options-user-header > li:hover,
+#block-menu-menu-options-user-header > li:focus,
+#block-menu-menu-options-user-header > li > a:focus,*/
+#block-menu-menu-options-user-header li:hover,
+#block-menu-menu-options-user-header li:focus {
+/*.nav > li > a:hover, .nav > li > a:focus {*/
   background-color: #337ab7 !important;
 }
+/*
+#block-menu-menu-options-user-header .nav li > a:hover,
+#block-menu-menu-options-user-header .nav li > a:focus {
+background-color: #337ab7;
+}*/
 .pane-menu-menu-menu-opciones-compartir-apa .menu {
   margin-left: -15px;
   margin-top: -35px;
@@ -479,33 +505,38 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
     -ms-box-shadow: 1px 1px 8px #ccc;
     -webkit-box-shadow: 1px 1px 8px #ccc;
 }
+#block-menu-menu-opciones-usuario li:focus,
+#block-menu-menu-opciones-usuario li:hover {
+  background-color: #337AB7 !important;
+}
 #block-menu-menu-opciones-usuario li {
   padding-top: 30px;
   cursor: pointer;
 }
 #block-menu-menu-opciones-usuario li:first-of-type {
-  margin-top: -71px;
+  margin-top: -51px;
 }
 #block-menu-menu-opciones-usuario li a:first-of-type {
   padding-bottom: 40px;
 }
-.page-dashboard #block-menu-menu-opciones-usuario li {
+#block-menu-menu-opciones-usuario li {
   /*height: 200px;*/
   width: 100%;
 }
-.page-dashboard #block-menu-menu-opciones-usuario li a.fa-file-text::before,
-.page-dashboard #block-menu-menu-opciones-usuario li a.fa-heart::before,
-.page-dashboard #block-menu-menu-opciones-usuario li a.fa-home::before,
-.page-dashboard #block-menu-menu-opciones-usuario li a.fa-cog::before,
-.page-dashboard #block-menu-menu-opciones-usuario li a.fa-envelope::before {
+#block-menu-menu-opciones-usuario li a.fa-file-text::before,
+#block-menu-menu-opciones-usuario li a.fa-heart::before,
+#block-menu-menu-opciones-usuario li a.fa-home::before,
+#block-menu-menu-opciones-usuario li a.fa-cog::before,
+#block-menu-menu-opciones-usuario li a.fa-envelope::before {
   display: inline-block;
   font-size: 3em;
   padding-bottom: 15px;
   padding-top: 20px;
   width: 100%;
 }
-#block-menu-menu-opciones-usuario li a.active {
- /* background-color: #337AB7 !important;*/
+#block-menu-menu-opciones-usuario li a.active,
+#block-menu-menu-opciones-usuario > li > a.active {
+  background-color: #337AB7 !important;
 }
 .block-agent-info form .form-item .fa {
   margin-right: 20px;
@@ -545,15 +576,19 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
 .field-name-field-agregar-unidad table thead {
   background-color: #f5f5f5;
 }
+.page-node #block-menu-menu-opciones-usuario li:first-of-type {
+  margin-top: -51px;
+}
 .page-node-add-apartment th.field-label {
 /* height: 10px;
  padding-left: 10px;
  padding-top: 5px;*/
 }
+/*
 .page-node-add-proyectos .addressfield-container .form-type-select {
   margin-right: 14px !important;
   width: 32% !important;
-}
+}*/
 
 .page-node-add-proyectos .field-name-field-precio-de-venta .form-item.form-group input,
 .page-node-add-proyectos .field-name-field-precio-de-alquiler .form-item.form-group input {
@@ -582,36 +617,46 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
 .page-node-add-apartment .form-item.form-type-radio label {
   background-color: transparent;
   border:0px;
-  margin-left: 20px;
+/*  margin-left: 20px;*/
 }
+/*
 .page-node-add-apartment .field-name-field-nombre-completo {
   float: left;
   margin-top: 30px !important;
-}
+}*/
 .page-node-add-apartment .field-name-field--rea-del-terreno input {
   display: inline;
   margin-right: 15px;
   width: 84%;
 }
-.page-node-add-apartment .field-name-field-comisi-n input,
-.page-node-add-apartment .field-name-field-price input {
-  display: inline;
+.page-node-add-apartament .field-name-field-m-totales input,
+.page-node-add-apartment .field-name-field-precio-de-alquiler input,
+.page-node-add-apartment .field-name-field-precio-de-venta input {
+  display: inline-block;
   margin-left: 15px;
-  width: 95%;
+  width: 90%;
 }
-.page-node-add-apartment .field-name-field-area-construccion input,
+.page-node-add-apartment .field-name-field-comisi-n input,
+.page-node-add-apartment .field-name-field-m-totales input,
+.page-node-add-apartment .field-name-field-m-constru-dos input,
 .page-node-add-apartment .field-name-field-area-del-terreno-m input {
-  display: inline;
+  display: inline-block;
   margin-right: 15px;
-  width: 92%;
+  width: 85%;
+}
+.page-node-add-proyectos .field-name-field-total-de-unidades input {
+  display: inline-block;
+  margin-right: 15px;
+  width: 70%;
 }
 .page-node-add-apartment .field-name-field-tel-fono {
   margin-top: -50px !important;
 }
+/*
 .page-node-add-apartment .field-name-field-comisi-n input {
   width: 95%;
   margin-left: 0px;
-}
+}*/
 .form-item-field-contract-type-und .form-item {
   display: inline;
 }
@@ -647,6 +692,7 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   margin-right: 15px;
   width: 97%;
 }
+.page-node-add form .group-datos-apartaments .form-group.form-item.form-type-textarea,
 .page-node-add form .group-datos-apartaments .form-group.form-item.form-type-mfw-managed-file {
   width: 100% !important;
 }
@@ -668,7 +714,6 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
 }
 .field-vocabulary-multiple {
   background: #ffffff none repeat scroll 0 0;
-  /*float: left;*/
   display: inline-block;
   font-size: 12px;
   margin-left: 0 !important;
@@ -678,6 +723,7 @@ header#top-header ul.language-switcher-locale-url img.language-icon {
   padding-top: 20px;
   min-height: 300px;
   width: 280px;
+  vertical-align: top;
 }
 .field-vocabulary-multiple ul {
   margin-left: -20px;
@@ -939,11 +985,20 @@ body {
   padding-top: 110px; 
   /*margin-bottom: -46px;*/
 }
-
+.page-node .col-sidebar-firts {
+  max-width: 13% !important;
+  padding: 50px 0 0;
+  margin-top: -60px;
+}
+.page-messages .col-sidebar-firts,
 .page-dashboard .col-sidebar-firts {
   max-width: 13% !important;
   padding: 50px 0 0;
   margin-top: 17px;
+}
+.page-messages .col-sidebar-firts,
+.page-dashboard .col-sidebar-firts {
+  margin-top: -5px;
 }
 .form-item-picture-delete input {
   margin-left: 0px !important;
@@ -993,24 +1048,34 @@ body {
   padding: 25px;
   border-left: 1px solid #9ea6aa;
 }
+.page-node.admin-menu .col-sidebar-firts,
 .admin-menu.page-dashboard .col-sidebar-firts {
   margin-top: -30px;
 }
+.page-messages .main-container,
 .page-dashboard .main-container {
   padding-top: 55px;
 }
 .not-logged-in.page-dashboard .main-container {
   padding-top: 120px;
 }
+.page-messages .well.region.region-sidebar-first,
+.page-node .well.region.region-sidebar-first,
 .page-dashboard .well.region.region-sidebar-first {
   padding: 0px !important;
 }
+.page-messages .col-sidebar-firts,
+.page-messages .well.region.region-sidebar-first,
+.page-node .col-sidebar-firts,
+.page-node .well.region.region-sidebar-first,
 .page-dashboard .col-sidebar-firts,
 .page-dashboard .well.region.region-sidebar-first {
   background: #3d3d3d none repeat scroll 0 0 !important;
   border: 0px !important;
   color: #ffffff;
 }
+.page-messages .col-sidebar-firts a,
+.page-node .col-sidebar-firts a,
 .page-dashboard .col-sidebar-firts a {
   color: #ffffff;
 }
@@ -1027,16 +1092,18 @@ body {
 
 .page-dashboard .views-exposed-widget.views-widget-sort-by,
 .page-dashboard .views-exposed-widget.views-widget-sort-sort_bef_combine {
-  margin-top: -78px;
+  margin-top: 100px;
   position: absolute;
-  right: 23px;
+  right: 13px;
   width: 22%;
   padding: 0px !important;
 }
+.page-messages .list-propertys,
 .page-dashboard .list-propertys {
   padding-top: 80px;
   padding-left: -5px;
 }
+.page-messages .list-propertys:nth-child(1),
 .page-dashboard .list-propertys:nth-child(1) {
   padding-top: 0px;
   margin-top: -60px;
@@ -1047,6 +1114,54 @@ body {
   margin-bottom: 0;
   margin-left: 0;
   margin-top: 0;
+}
+.type-item {
+  color: rgba(255, 168, 0, 1);
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: -20px;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.flags-item {
+  display: block;
+}
+.flags-item:nth-child(1) {
+  margin-top: 20px;
+}
+.flags-item:nth-child(2) {
+  margin-left: -3px;
+  margin-top: 60px;
+}
+.flags-item:nth-child(3) {
+  margin-left: -3px;
+  margin-top: 100px;
+}
+.page-dashboard .flags-item a {
+  position: absolute;
+  z-index: 1;
+}
+.page-dashboard .flags-item .flag-processed i,
+.page-dashboard .flags-item a >i:focus,
+.page-dashboard .flags-item a >i:hover {
+  background: rgba(51, 122, 183, 0.9) none repeat scroll 0 0;
+}
+.page-dashboard .flags-item a i {
+  background: rgba(255, 168, 0, 0.9) none repeat scroll 0 0;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: -10px;
+  padding: 5px;
+}
+.page-dashboard-favoritos .page-header {
+  margin-left: 260px;
+  margin-top: 20px;
+  position: absolute;
 }
 .page-busqueda-mapa .page-header {
   display: none;
@@ -1151,11 +1266,14 @@ body {
   width: 94%;
   margin-left: 25px;
 }
+.page-node #content-section-container,
 .page-dashboard #content-section-container {
   flex: 0 0 87% !important;
   max-width: 90%;
   padding-right: 0px;
+  padding-bottom: 60px;
 }
+.page-node #navbar,
 .page-dashboard #navbar {
   box-shadow: initial !important; 
 }
@@ -1239,6 +1357,7 @@ body.page-propiedad,
 body.page-home,
 body.page-apartamentos,
 body.page-search-apartamentos-compra,
+body.page-node,
 body.page-dashboard {
   background: #F2F2F2;
   /*background: #cfcfcf;*/
@@ -1248,11 +1367,12 @@ body.page-node-add-apartment {
   background: #ccc;
 }
 .page-node-add .form-item-field-destacado-und.form-type-checkbox input {
-  float: right;
-  margin-top: -8px;
-  width: 70%;
+/*  float: right;
+  margin-top: -8px;*/
+  margin-top: -7px;
+/*  width: 70%;
+  position: absolute;*/
 }
-.page-node-add .field-name-body,
 .page-node-add .field-name-body textarea,
 .page-node-add .field-name-body .form-item,
 .page-node-add .field-name-field-location .form-group.form-wrapper,
@@ -1266,6 +1386,24 @@ body.page-node-add-apartment {
 .page-node-add form .group-datos-apartaments .form-group.form-wrapper.field-name-field--rea-del-terreno input {
   width: 81%;
 }*/
+div.horizontal-tabs {
+  border-bottom: 0 none;
+  margin:0px;
+}
+div.horizontal-tabs .panel {
+  border-bottom: 0px;
+  border-radius: 4px 4px 0px 0px;
+  box-shadow: white;
+}
+.page-node-add .form-actions.form-wrapper.form-group {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 0 0 5px 5px;
+  margin-top: -20px;
+  padding: 20px;
+  margin-left: 1px;
+  width: 99.9%;
+}
+}
 .page-node-add form .field-name-field-bedrooms {
   float: left;
 }
@@ -1274,32 +1412,52 @@ body.page-node-add-apartment {
 .page-node-add form .field-name-field-galer-a {
  width: 98% !important;
 }
+/*
+.page-node-add form .field-name-field-image input {
+  width: 79%;
+}*/
+.page-node-add form .field-name-field-galer-a input,
 .page-node-add form .field-name-field-video-youtube {
   width: 83% !important;
 }
+.page-node-add form .field-name-field-galer-a input,
 .page-node-add form .field-name-field-image input {
   border-radius: 0 !important;
   float: left;
   margin-right: 2px;
-  width: 99% !important;
-
+}
+.page-node-add form .image-widget-data input.form-control.form-text {
+  width: 100%;
+  display: inline-block;
 }
 .page-node-add form .field-name-field-galer-a input {
-  border-radius: 0 !important;
+/*  border-radius: 0 !important;
   float: left;
   margin-right: 2px;
-  width: 85% !important;
+*/
+  /*width: 85% !important;*/
 }
-.page-node-add form .field-name-field-agregar-imagenes-unidades button {
+.page-node-add form .form-type-managed-file button {
   float: right;
   margin-left: 10px !important;
   margin-top: 5px;
 }
+.page-node-add form .input-group-btn {
+  margin-top: 0px;
+}
+.page-node-add form .field-name-field-image button {
+  float: left !important;
+}
 .page-node-add form .field-type-image button,
-.page-node-add form .field-name-field-image button,
 .page-node-add form .field-name-field-galer-a button {
   float: right;
   margin-right: 0 !important;
+  border-radius: 0 !important;
+  margin-left: 5px;
+}
+.page-node-add form .field-name-field-image button,
+.page-node-add form .field-name-field-galer-a button {
+  margin-top: 10px;
 }
 /*
 .page-node-add form .field-name-field-niveles-propiedades {
@@ -1310,15 +1468,16 @@ body.page-node-add-apartment {
 .page-node-add .field-name-field-agregar-unidad .field-label {
   display: none;
 }
+/*
 .page-node-add form .group-datos-apartaments .form-group.form-item {
   width: 95%;
-}
+}*/
 form .field-name-field-contract-type {
 /*  display: inline-block;
   min-height: 50px;
   padding-bottom: 7px;*/
   float: left;
-  margin-bottom: 30px;
+/*  margin-bottom: 30px;*/
   width: 100%;
 }
 .group-caracteristicas .form-checkboxes,
@@ -1328,35 +1487,72 @@ form .field-name-field-contract-type {
 .field-name-field-destacado.form-wrapper.form-group {
   width: 50%;
 }
-.field-name-field-contract-type .form-type-radio,
+.field-name-field-destacado.form-wrapper.form-group label {
+  font-weight: bold;
+  margin-top: 50px;
+}
+.field-name-field-contract-type .form-type-radio {
+  display: inline-block;
+  width: 100px;
+}
 #contacto-element-field .form-wrapper.form-group,
 #group-three-column2 .form-wrapper.form-group, 
-#group-three-column2 .form-item.form-group,
-#group-three-column .form-wrapper.form-group,
-#group-three-column .form-item.form-group {
+#group-three-column2 .form-item.form-group {
   width: 49%;
   margin-right: 1%;
   float: left;
 }
-#group-three-column .form-wrapper.form-group {
-  margin-bottom: -50px;
+/*.group-three-column .form-wrapper.form-group {*/
+.group-contacto-propiedades .group-three-column .form-wrapper.form-group,
+.group-datos-apartament .group-three-column .form-group {
+  width: 28% !important;
+  margin-right: 5%;
+  float: left;
 }
+.group-datos-proyectos .group-three-column .form-item-title.form-item,
+.group-datos-proyectos .group-three-column .form-item-language.form-item,
+.group-datos-proyectos .group-three-column .form-group.form-wrapper {
+  width: 28% !important;
+  margin-right: 5% !important;
+  float: left;
+}
+/*
+.group-contacto-propiedades .group-three-column .form-wrapper.form-group {
+  width: 28% !important;
+  margin-right: 5%;
+  float: left;
+}*/
+.group-two-column {
+  display: inline-block;
+  width: 100%;
+}
+.group-two-column .form-wrapper.form-group {
+  display: inline-block;
+  margin-right: 5%;
+  width: 45%;
+}
+/*#group-three-column .form-wrapper.form-group {
+  margin-bottom: -50px;
+}*/
 #group-twelve-group .form-item.form-group {
   display: inline-block;
   margin-top: 70px;
   width: 100%;
 }
 #group-three-column2 .field-name-field-estado-actual-propiedad .form-item-field-estado-actual-propiedad-und,
-#group-three-column .field-name-field-estado-actual-propiedad .form-item-field-estado-actual-propiedad-und {
-  width: 100%;
+.group-three-column .field-name-field-estado-actual-propiedad .form-item-field-estado-actual-propiedad-und {
+  width: 100% !important;
 }
-#boostrap-panel-location,
+.page-node-add .field-name-body,
+.group-boostrap-panel-location,
 .form-item-field-agregar-unidad-und-0-field-contract-type-und .form-radios {
   width: 100%;
+  float: left;
 }
+/*
 .field-name-field-contract-type.form-wrapper.form-group .control-label {
   width: 160px;
-}
+}*/
 .field-name-field-contract-type.form-wrapper.form-group .control-label input {
   float: left;
   margin: -5px 0 0 70px;
@@ -1512,6 +1708,7 @@ form .field-name-field-contract-type {
 }
 .view-block-redes-sociales .views-field a {
   color: #000000;
+  font-size: 16px;
 }
 .view-block-redes-sociales .views-field .fa {
   color: #337ab7;
@@ -1884,7 +2081,7 @@ form .field-name-field-contract-type {
   background: transparent !important;
 }
 /* form proyectos */
-form#proyectos-node-form .field-name-field-tipo-de-desarrollo, .field-name-field-etapa-de-desarrollo, .field-name-field-total-de-unidades, .field-name-field-entrega {width: 24%; float: left;}
+/*form#proyectos-node-form .field-name-field-tipo-de-desarrollo, .field-name-field-etapa-de-desarrollo, .field-name-field-total-de-unidades, .field-name-field-entrega {width: 24%; float: left;}*/
 form#proyectos-node-form ul.horizontal-tabs-list li {background-image: url(img-custom/in.png), url(img-custom/normal.png); background-repeat: no-repeat; background-position: left, right; background-color:  #eee;  padding: 0 15px 5px 5px; font-size: 18px; border:0; padding-left: 26px;}
 form#proyectos-node-form ul.horizontal-tabs-list li.selected {background-image: url(img-custom/in-selected.png), url(img-custom/selected.png); background-repeat: no-repeat; background-position: left, right; background-color:  orange;  padding: 0 15px 5px 5px; font-size: 18px; border:0; padding-left: 26px;}
 form#proyectos-node-form ul.horizontal-tabs-list li.selected a strong{color: #fff;}
@@ -1892,8 +2089,10 @@ form#proyectos-node-form .field-name-field-localizacion-en-el-mapa {width: 100%;
 
 /* form apartament */
 /*form#apartment-node-form .field-name-field-tipo-de-desarrollo, .field-name-field-etapa-de-desarrollo,*/
+/*
 .field-name-field-total-de-unidades,
 .field-name-field-entrega {width: 24%; float: left;}
+*/
 form#apartment-node-form ul.horizontal-tabs-list li {background-image: url(img-custom/in.png), url(img-custom/normal.png); background-repeat: no-repeat; background-position: left, right; background-color:  #eee;  padding: 0 15px 5px 5px; font-size: 18px; border:0; padding-left: 26px;}
 form#apartment-node-form ul.horizontal-tabs-list li.selected {background-image: url(img-custom/in-selected.png), url(img-custom/selected.png); background-repeat: no-repeat; background-position: left, right; background-color:  orange;  padding: 0 15px 5px 5px; font-size: 18px; border:0; padding-left: 26px;}
 form#apartment-node-form ul.horizontal-tabs-list li.selected a strong{color: #fff;}
@@ -2121,10 +2320,7 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
   margin-left: 30px;
   margin-top: 185px;
   position: absolute;
-<<<<<<< HEAD
   z-index: 9;
-=======
->>>>>>> 7120eb4c93f7e1b2538698a7cc9a42a3818dbac7
 }
 .title-content {
   font-weight: bold;
@@ -2145,7 +2341,6 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
 .margin-top4 {
   margin-top: 3px;
 }
-<<<<<<< HEAD
 #-wrapper {
   display: none;
 }
@@ -2171,6 +2366,9 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
 }
 .marginl15 {
   margin-left: 15%;
+}
+.marginl6 {
+  margin-left: 6%;
 }
 .marginl10m {
   margin-left: -30px;
@@ -2209,7 +2407,16 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
 }
 .page-busqueda-mapa .views-exposed-form .views-exposed-widget .collapsible .panel-heading {
   padding: 7px 15px;
-
 }
-=======
->>>>>>> 7120eb4c93f7e1b2538698a7cc9a42a3818dbac7
+/** nice imagefield **/
+div.nice-imagefield-image {
+  border: 1px solid #337ab7;
+  box-shadow: 0px 5px 10px #337ab7;
+ -ms-box-shadow: 0px 5px 10px #337ab7;
+ -moz-box-shadow: 0px 5px 10px #337ab7;
+ -webkit-box-shadow: 0px 5px 10px #337ab7;
+}
+/** tables **/
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+  background: transparent;
+}
