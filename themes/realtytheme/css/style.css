@@ -177,6 +177,7 @@ input,
 select {
   background: rgba(255, 165, 0, 0.5);
 }*/
+.pane-realty-webform-realty-information button,
 .btn-info,
 .btn-default,
 .btn-primary {
@@ -192,16 +193,21 @@ select {
   margin-left: 10px !important;
 }
 .btn-profile {
-  background: #0070cd none repeat scroll 0 0 !important;
+  background: #337ab7 !important;
   color: #ffffff;
   margin-left: 15px !important;
   margin-top: 10px;
   width: 89.5%;
   font-weight: bold;
 }
+.pane-realty-webform-realty-information button:hover,
+.pane-realty-webform-realty-information button:focus,
 .btn-profile:hover {
   background-color: #e6e6e6 !important;
   border-color: #adadad !important;
+  color: #0971ce;
+  box-shadow: 0 0 0 0.2em rbga(0, 123, 255, 0.25) !important;
+  border-color: 0px;
 }
 /*
  * Tabs
@@ -539,8 +545,9 @@ background-color: #337ab7;
   background-color: #337AB7 !important;
 }
 .block-agent-info form .form-item .fa {
-  margin-right: 20px;
+  margin-right: 10px;
   font-size: 20px;
+  width: 20px;
 }
 .block-agent-info form .form-item input {
   width: 80%;
@@ -549,12 +556,13 @@ background-color: #337ab7;
 .block-agent-info form .form-item:nth-child(2) input {
   margin-left: -3px !important;
 }
+/*
 .block-agent-info form .form-item:first-child input {
   margin-left: 3px !important;
 }
 .block-agent-info form .form-item input {
   margin-left: 0px !important;
-}
+}*/
 .block-agent-info form label {
   display: none;
 }
@@ -920,9 +928,12 @@ body {
   padding-right: 0px;
   padding-left: 0px;
 }
+.logged-in.page-proyecto .region-top-sglider,
+.logged-in.page-propiedad .region-top-sglider {
+  margin-top: -65px;
+}
 .page-propiedad .region-top-sglider {
   margin-top: -10px;
-/*  margin-bottom: -40px;*/
 }
 .separator-breadcrumb {
   color: #000000;
@@ -941,17 +952,21 @@ body {
 .pane-page-breadcrumb .breadcrumb {
   display: inline;
 }
-.breadcrumb {background: #ececec;}
-.breadcrumb,
+.breadcrumb {
+  background: #ececec;
+  background: #e6e6e6 none repeat scroll 0 0;
+  border-radius: 5px;
+  margin-left: 36% !important;
+  width: 64%;
+}
 .pane-page-breadcrumb {
   background: #e6e6e6 none repeat scroll 0 0;
   border-radius: 5px;
-  margin-left: 21% !important;
+  margin-left: 26% !important;
   width: 74%;
 }
-.page-propiedad .pane-page-breadcrumb .breadcrumb {
-  background: transparent none repeat scroll 0 0;
-  display: block !important;
+.pane-page-breadcrumb .breadcrumb {
+  background: transparent !important;
   height: 30px;
   margin-top: -30px;
   padding-top: 5px;
@@ -965,18 +980,42 @@ body {
 .breadcrumb {
   color: #337ab7;
 }
-.breadcrumb,
+.not-logged-in .region-top-sglider .pane-page-breadcrumb .breadcrumb {
+  display: block !important;
+}
+.logged-in .pane-page-breadcrumb .breadcrumb,
+.page-propiedad .region-top-sgliderpane-page-breadcrumb .breadcrumb,
 .breadcrumb {
-  display: none;
+  display: none !important;
+}
+.logged-in .pane-page-breadcrumb.displayblock {
+  margin-left: 0 !important;
+  width: 100%;
+}
+.logged-in .pane-page-breadcrumb.displayblock .breadcrumb {
+  background: #e6e6e6 !important;
+  display: inline !important;
+  float: left;
+  margin-bottom: 8px !important;
+  margin-left: 0 !important;
+  margin-top: 5px !important;
+  width: 100%;
+}
+.logged-in .pane-page-breadcrumb.displayblock .breadcrumb {
+  display: inline-block;
+  height: 40px;
+  margin-bottom: 0;
+  padding-top: 10px;
 }
 .pane-page-breadcrumb {
   margin-bottom: -10px;
   margin-top: 40px;
 }
+/*
 .pane-page-breadcrumb .breadcrumb {
   display: block !important;
   background: transparent;
-}
+}*/
 .pane-title {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 5px;
@@ -1660,11 +1699,12 @@ form .field-name-field-contract-type {
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
+  margin-top: 15px;
 }
 .pane-realty-webform-realty-information {
   color: #5D5D5D;
   background: #ffffff;
-  margin-top: -105px !important;
+  margin-top: -90px !important;
 }
 .pane-realty-webform-realty-information .pane-title {
   border-bottom: 1px solid #ccc;
@@ -1709,6 +1749,19 @@ form .field-name-field-contract-type {
 .view-block-redes-sociales .views-field a {
   color: #000000;
   font-size: 16px;
+  text-decoration: none;
+}
+.page-propiedad .pane-node-title a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: normal;
+}
+.view-block-redes-sociales .views-field.views-field-ops {
+  margin-left: 5%;
+  width: auto;
+}
+.view-block-redes-sociales .views-field.views-field-ops-1 {
+  float: right;
 }
 .view-block-redes-sociales .views-field .fa {
   color: #337ab7;
@@ -2361,6 +2414,9 @@ ul.quicktabs-tabs.quicktabs-style-zen li {
   width: 100%;
   display: inline-block;
 }
+.paddingt10 {
+  padding-top: 10px;
+}
 .paddingl12 {
   padding-left: 12px !important;
 }
@@ -2419,4 +2475,8 @@ div.nice-imagefield-image {
 /** tables **/
 .table-striped > tbody > tr:nth-of-type(2n+1) {
   background: transparent;
+}
+/**messages **/
+#messages-node-form .form-wrapper .form-required {
+  display: none;
 }
