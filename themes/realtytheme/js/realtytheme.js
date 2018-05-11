@@ -68,6 +68,9 @@ console.log(Drupal.ajax);
 }(jQuery));
        
 jQuery(document).ready(function($) {
+  var heightb =  $(window).height() - 55;
+/*  $('body').css({'min-height': heightb});*/
+  $('.page-messages-new .main-container.container-fluid > .row').css({'min-height': heightb});
   //flexsglider
   $('ul.flex-direction-nav li a.flex-prev').addClass('fa fa-angle-left');
   $('ul.flex-direction-nav li a.flex-next').addClass('fa fa-angle-right');
