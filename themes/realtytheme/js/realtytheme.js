@@ -12,6 +12,12 @@
         $(this).html(flag);
       });
 
+
+/*
+  $( '#block-menu-menu-opciones-usuario li').on('click', function() {
+      $(this.id).find('a').trigger('click');
+  });*/
+
 /*
  $('.page-dashboard .box-element-propertys').each(function() {
    var self = $(this);
@@ -268,6 +274,6 @@ console.log('jose');
      $(this).parent('li').css({'background-color': '#337AB7'});
 	});
 */
-  
+
 
 });

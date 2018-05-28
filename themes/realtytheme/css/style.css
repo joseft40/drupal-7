@@ -185,6 +185,12 @@ select {
   color: #ffffff;
   border-radius: 10px;
   font-weight: bold;
+  border:0px;
+}
+.btn-blue:hover,
+.btn-blue:focus {
+  color: #ffffff;
+  background: #ffb718 !important;
 }
 .btn-blue {
   background: #0070cd !important;
@@ -199,15 +205,15 @@ select {
   margin-top: 10px;
   width: 89.5%;
   font-weight: bold;
+  border:0px;
 }
 .pane-realty-webform-realty-information button:hover,
 .pane-realty-webform-realty-information button:focus,
 .btn-profile:hover {
-  background-color: #e6e6e6 !important;
-  border-color: #adadad !important;
-  color: #0971ce;
+  color: #ffffff;
+  background: #ffb718 !important;
   box-shadow: 0 0 0 0.2em rbga(0, 123, 255, 0.25) !important;
-  border-color: 0px;
+  border: 0px;
 }
 /*
  * Tabs
@@ -602,13 +608,18 @@ background-color: #337ab7;
 .page-node-add-proyectos .field-name-field-precio-de-alquiler .form-item.form-group input {
   display: inline-block;
   margin-left: 10px;
-  width: 93%;
+  width: 90%;
+}
+.page-node-add-proyectos .field-name-field-disponibles .form-item.form-group input {
+  display: inline-block;
+  margin-right: 10px;
+  width: 70%;
 }
 .page-node-add-proyectos .field-name-field-m-constru-dos .form-item.form-group input,
 .page-node-add-proyectos .field-name-field-m-totales .form-item.form-group input {
   display: inline-block;
   margin-right: 10px;
-  width: 91%;
+  width: 90%;
 }
 .page-node-add-proyectos th.field-label,
 .page-node-add-proyectos .form-item label:first-child,
@@ -1029,11 +1040,15 @@ body {
   padding: 50px 0 0;
   margin-top: -60px;
 }
+.page-articulos .col-sidebar-firts,
 .page-messages .col-sidebar-firts,
 .page-dashboard .col-sidebar-firts {
   max-width: 13% !important;
   padding: 50px 0 0;
   margin-top: 17px;
+}
+.page-articulos .col-sidebar-firts {
+  margin-top: -5px;
 }
 .page-messages .col-sidebar-firts,
 .page-dashboard .col-sidebar-firts {
@@ -1091,6 +1106,7 @@ body {
 .admin-menu.page-dashboard .col-sidebar-firts {
   margin-top: -30px;
 }
+.page-articulos .main-container,
 .page-messages .main-container,
 .page-dashboard .main-container {
   padding-top: 55px;
@@ -1098,11 +1114,14 @@ body {
 .not-logged-in.page-dashboard .main-container {
   padding-top: 120px;
 }
+.page-articulos .well.region.region-sidebar-first,
 .page-messages .well.region.region-sidebar-first,
 .page-node .well.region.region-sidebar-first,
 .page-dashboard .well.region.region-sidebar-first {
   padding: 0px !important;
 }
+.page-articulos .col-sidebar-firts,
+.page-articulos .well.region.region-sidebar-first,
 .page-messages .col-sidebar-firts,
 .page-messages .well.region.region-sidebar-first,
 .page-node .col-sidebar-firts,
@@ -1113,11 +1132,14 @@ body {
   border: 0px !important;
   color: #ffffff;
 }
+.page-articulos .col-sidebar-firts a,
 .page-messages .col-sidebar-firts a,
 .page-node .col-sidebar-firts a,
 .page-dashboard .col-sidebar-firts a {
   color: #ffffff;
 }
+.page-articulos .views-exposed-widget.views-widget-sort-by label,
+.page-articulos .views-exposed-widget.views-widget-sort-by select,
 .page-dashboard .views-exposed-widget.views-widget-sort-by label,
 .page-dashboard .views-exposed-widget.views-widget-sort-by select {
   width: 110px;
@@ -1128,7 +1150,13 @@ body {
   box-shadow: initial;
   border: 0 none;
 }
-
+.page-articulos .views-exposed-widget.views-widget-sort-by {
+  margin-top: 0px;
+  padding: 0 !important;
+  position: absolute;
+  right: 18px;
+  width: 25%;
+}
 .page-dashboard .views-exposed-widget.views-widget-sort-by,
 .page-dashboard .views-exposed-widget.views-widget-sort-sort_bef_combine {
   margin-top: 100px;
@@ -1137,11 +1165,13 @@ body {
   width: 22%;
   padding: 0px !important;
 }
+.page-articulos .list-propertys,
 .page-messages .list-propertys,
 .page-dashboard .list-propertys {
   padding-top: 80px;
   padding-left: -5px;
 }
+.page-articulos .list-propertys:nth-child(1),
 .page-messages .list-propertys:nth-child(1),
 .page-dashboard .list-propertys:nth-child(1) {
   padding-top: 0px;
@@ -1177,15 +1207,21 @@ body {
   margin-left: -3px;
   margin-top: 100px;
 }
+.page-articulos .flags-item a,
 .page-dashboard .flags-item a {
   position: absolute;
   z-index: 1;
 }
+
+.page-articulos .flags-item .flag-processed i,
+.page-articulos .flags-item a >i:focus,
+.page-articulos .flags-item a >i:hover,
 .page-dashboard .flags-item .flag-processed i,
 .page-dashboard .flags-item a >i:focus,
 .page-dashboard .flags-item a >i:hover {
   background: rgba(51, 122, 183, 0.9) none repeat scroll 0 0;
 }
+.page-articulos .flags-item a i,
 .page-dashboard .flags-item a i {
   background: rgba(255, 168, 0, 0.9) none repeat scroll 0 0;
   border: 1px solid #eee;
@@ -1252,6 +1288,7 @@ body {
 }
 /*.page-busqueda-mapa .region-sidebar-first,
 .page-busqueda .region-sidebar-first,*/
+.page-articulos .region-filter-search-property,
 .page-dashboard .region-filter-search-property {
   background: #ffffff;
   padding: 10px;
@@ -1305,6 +1342,7 @@ body {
   width: 94%;
   margin-left: 25px;
 }
+.page-articulos #content-section-container,
 .page-node #content-section-container,
 .page-dashboard #content-section-container {
   flex: 0 0 87% !important;
@@ -1312,14 +1350,22 @@ body {
   padding-right: 0px;
   padding-bottom: 60px;
 }
+.page-messages #navbar,
+.page-articulos #navbar,
 .page-node #navbar,
 .page-dashboard #navbar {
   box-shadow: initial !important; 
 }
-#edit-filtros-aplicados {
+#filtros-aplicados-body li {
+  list-style: none;
+}
+#filtros-aplicados-body ul {
+  padding: 0px;
+}
+#filtros-aplicados {
   border-radius:0px 0px 15px 15px;
 }
-#edit-filtros-aplicados .panel-collapse a {
+#filtros-aplicados .panel-collapse a {
   background: #337ab7 none repeat scroll 0 0;
   border-radius: 10px;
   color: #ffffff;
@@ -1331,13 +1377,13 @@ body {
   width: 100%;
   margin-bottom: 10px;
 }
-#edit-filtros-aplicados {
+#filtros-aplicados {
   box-shadow: 0 5px 5px #ccc;
 }
-#edit-filtros-aplicados .panel-collapse div:last-child {
+#filtros-aplicados .panel-collapse div:last-child {
   margin-top: 20px;
 }
-#edit-filtros-aplicados .form-submit {
+#filtros-aplicados .form-submit {
   margin-top: 10px;
 }
 .view-lista-de-propiedades td {
@@ -1397,6 +1443,8 @@ body.page-home,
 body.page-apartamentos,
 body.page-search-apartamentos-compra,
 body.page-node,
+body.page-articulos,
+body.page-messages,
 body.page-dashboard {
   background: #F2F2F2;
   /*background: #cfcfcf;*/
@@ -1459,11 +1507,20 @@ div.horizontal-tabs .panel {
 .page-node-add form .field-name-field-video-youtube {
   width: 83% !important;
 }
-.page-node-add form .field-name-field-galer-a input,
+.page-node-add-apartment.page-node-add form .field-name-field-galer-a input {
+  border-radius: 0 !important;
+  float: left;
+  margin-right: 2px;
+  width: 80%;
+}
 .page-node-add form .field-name-field-image input {
   border-radius: 0 !important;
   float: left;
   margin-right: 2px;
+}
+.page-node-add-apartment.page-node-add form .field-name-field-image input {
+  margin-right: -1px;
+  width: 79%;
 }
 .page-node-add form .image-widget-data input.form-control.form-text {
   width: 100%;
@@ -1494,9 +1551,16 @@ div.horizontal-tabs .panel {
   border-radius: 0 !important;
   margin-left: 5px;
 }
-.page-node-add form .field-name-field-image button,
-.page-node-add form .field-name-field-galer-a button {
+.page-node-add form .field-name-field-image button {
+  margin-top: 0px;
+}
+.page-node-add.page-node-add-proyectos form .field-type-image.field-name-field-agregar-imagenes-unidades button,
+.page-node-add-apartment.page-node-add form .field-name-field-image button {
+  /*margin-top: 5px;*/
   margin-top: 10px;
+}
+.page-node-add form .field-name-field-galer-a button {
+  margin-top: -40px;
 }
 /*
 .page-node-add form .field-name-field-niveles-propiedades {
@@ -1511,6 +1575,12 @@ div.horizontal-tabs .panel {
 .page-node-add form .group-datos-apartaments .form-group.form-item {
   width: 95%;
 }*/
+.page-node-add form .field-name-field-agregar-imagenes-unidades {
+  margin-top: 20px;
+}
+form .field-name-field-agregar-unidad .field-name-field-medio-bano {
+  margin-bottom: 20px;
+}
 form .field-name-field-contract-type {
 /*  display: inline-block;
   min-height: 50px;
@@ -1518,6 +1588,7 @@ form .field-name-field-contract-type {
   float: left;
 /*  margin-bottom: 30px;*/
   width: 100%;
+  margin-bottom: 5px;
 }
 .group-caracteristicas .form-checkboxes,
 .group-caracteristicas-proyecto .form-checkboxes {
@@ -1755,6 +1826,9 @@ form .field-name-field-contract-type {
   color: #000000;
   text-decoration: none;
   font-weight: normal;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
 }
 .view-block-redes-sociales .views-field.views-field-ops {
   margin-left: 5%;
